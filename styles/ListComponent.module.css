@@ -1,0 +1,19 @@
+.itemList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .itemList li {
+    padding: 15px;
+    font-size: 1.2em;
+    text-align: center;
+    border: 1px solid #010000;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .itemList li:hover {
+    background-color: #3498db;
+    color: white;
+    transform: scale(1.05);
+  }  
