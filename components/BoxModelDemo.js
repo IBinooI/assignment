@@ -1,16 +1,20 @@
 import { useState } from "react";
-import styles from '@/styles/BoxModelDemo.module.css';
+import styles from '../styles/BoxModelDemo.module.css';
 
 export default function BoxModelDemo() {
+  //Background color and border color
   const [bgColor, setBgColor] = useState("#000000");
   const [borderColor, setBorderColor] = useState("#2c3e50");
 
+  //Function that generates random colors
   function getRandomColor() {
     const letters = "0123456789ABCDEF";
     let color = "#";
     for (let i = 0; i < 6; i++) {
+      //Will randomly select a character and append to the color string
       color += letters[Math.floor(Math.random() * 16)];
     }
+    //Return the random color
     return color;
   }
 

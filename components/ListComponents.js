@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from '../styles/ListComponent.module.css';
+import styles from "../styles/ListComponent.module.css";
 
 export default function ListComponent() {
   const [items, setItems] = useState([
@@ -9,19 +9,26 @@ export default function ListComponent() {
     "Fourth item",
   ]);
 
+  //Function to generate a random string of characters thats 8 characters long
   function generateRandomString(length = 8) {
     const characters =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
     let result = "";
     for (let i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * characters.length));
+      //Randomly selects characters to build the string
+      result += characters.charAt(
+        Math.floor(Math.random() * characters.length)
+      );
     }
+    //Return the random string
     return result;
   }
 
+  //Function to handle th click event for the list items
   function handleItemClick(index) {
     setItems((prevItems) =>
       prevItems.map((item, i) => (i === index ? generateRandomString() : item))
+   // Update the clicked item with a random string while keeping others the same
     );
   }
 

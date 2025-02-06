@@ -4,12 +4,17 @@ import styles from '../styles/Contact.module.css';
 
 
 export default function Contact() {
+  //Manage form imput data
   const [formData, setFormData] = useState({
+   //Name input
     name: '',
+   //Email input
     email: '',
+    //Message input
     message: '',
   });
 
+  //Handle imput changes and update state
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -18,7 +23,9 @@ export default function Contact() {
     });
   };
 
+  //Handle form submission
   const handleSubmit = (e) => {
+    //Prevent defualt submission
     e.preventDefault();
     alert('Form submitted!');
   };
